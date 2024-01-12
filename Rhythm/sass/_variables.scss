@@ -1,0 +1,57 @@
+//variables
+$color-basic-text: #666666;
+$color-mark: #ff6428;
+$color-title: #121212;
+$color-bg: $color-title;
+//-----------------variables for mixin-----------------
+$bp-xlarge: 1199.98px;
+$bp-large: 1023.98px;
+$bp-medium: 767.98px;
+$bp-small: 424.98px;
+//----------------------------------------------------
+$up-bp-xlarge: 1200px;
+$up-bp-large: 1024px;
+$up-bp-medium: 768px;
+$up-bp-small: 425px;
+//----------------------mixin----------------------------
+@mixin break-xl {
+	@media (max-width:#{$bp-xlarge}) {
+		@content;
+	}
+}
+@mixin break-lg {
+	@media (max-width:#{$bp-large}) {
+		@content;
+	}
+}
+@mixin break-md {
+	@media (max-width:#{$bp-medium}) {
+		@content;
+	}
+}
+@mixin break-sm {
+	@media (max-width:#{$bp-small}) {
+		@content;
+	}
+}
+//----------------------up-mixin----------------------------------
+@mixin up-break-xl {
+	@media (min-width:#{$up-bp-xlarge}) {
+		@content;
+	}
+}
+@mixin up-break-lg {
+	@media (min-width:#{$up-bp-large}) {
+		@content;
+	}
+}
+@mixin up-break-md {
+	@media (min-width:#{$up-bp-medium}) {
+		@content;
+	}
+}
+@mixin up-break-sm {
+	@media (min-width:#{$up-bp-small}) {
+		@content;
+	}
+}

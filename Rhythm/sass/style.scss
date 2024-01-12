@@ -1,0 +1,717 @@
+@import "_nullstyle";
+@import "_variables";
+@font-face {
+	font-family: CalSans;
+	src:
+		url("../fonts/CalSans-SemiBold.woff2") format("woff2"),
+		url("../fonts/CalSans-SemiBold.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+//--------------------------------------------------------
+body {
+	font-family: Poppins;
+	color: $color-basic-text;
+}
+//-----------------------------------------------
+.title {
+	color: $color-title;
+	text-align: center;
+	font-family: CalSans;
+	font-size: 44px;
+	font-weight: 600;
+	line-height: 1.2;
+	span {
+		color: $color-mark;
+	}
+	@include break-sm {
+		font-size: 36px;
+		line-height: 36px;
+	}
+}
+//------------------------------------------------
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.page {
+	flex: 1 1 auto;
+	&__main {
+		margin-bottom: 88px;
+		@include break-lg {
+			margin-bottom: 40px;
+		}
+		@include break-sm {
+			margin-bottom: 0px;
+		}
+	}
+	&__store {
+		margin-bottom: 188px;
+		@include break-lg {
+			margin-bottom: 120px;
+		}
+		@include break-sm {
+			margin-bottom: 80px;
+		}
+	}
+	&__categories {
+		margin-bottom: 228px;
+		@include break-lg {
+			margin-bottom: 120px;
+		}
+		@include break-sm {
+			margin-bottom: 80px;
+		}
+	}
+	&__brands {
+		margin-bottom: 180px;
+		@include break-lg {
+			margin-bottom: 120px;
+		}
+		@include break-md {
+			margin-bottom: 40px;
+		}
+		@include break-sm {
+			margin-bottom: 80px;
+		}
+	}
+	&__advantages {
+	}
+	&__reviews {
+	}
+}
+
+[class*="__container"] {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+//-------------------------------------------------------
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	&__container {
+		display: flex;
+		gap: 116px;
+		align-items: center;
+		min-height: 152px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		@include break-xl() {
+			gap: 80px;
+		}
+		@include break-lg {
+			min-height: 100px;
+		}
+		@include break-md {
+			gap: 20px;
+		}
+		@include break-sm {
+			justify-content: space-between;
+		}
+	}
+
+	&__logo {
+		@include break-sm {
+			padding-top: 20px;
+			align-self: start;
+		}
+	}
+
+	&__menu {
+		padding: 10px 15px 10px 15px;
+		border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.747);
+	}
+}
+.menu {
+	&__list {
+		display: flex;
+		gap: 56px;
+		@include break-lg {
+			gap: 25px;
+		}
+		@include break-md {
+			gap: 15px;
+			flex-wrap: wrap;
+		}
+		@include break-sm {
+			flex-direction: column;
+			align-content: end;
+		}
+	}
+
+	&__item {
+	}
+
+	&__link {
+		color: #12121266;
+		font-weight: 500;
+		position: relative;
+		&::before {
+			content: "";
+			right: 0;
+			bottom: 1px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background: #12121266;
+			transition: 0.5s;
+			transform: scaleX(0);
+		}
+		&:hover::before {
+			transform: scaleX(1);
+		}
+	}
+}
+//-------------------------------------------------------------
+
+.main {
+	padding-bottom: 80px;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		@include break-md() {
+			flex-wrap: wrap-reverse;
+		}
+	}
+
+	&__content {
+		flex: 0 1 54%;
+		align-self: flex-end;
+		padding-top: 120px;
+		padding-bottom: 60px;
+		padding-right: 20px;
+		@include break-lg() {
+			padding-bottom: 0px;
+		}
+		@include break-md {
+			flex: 1 0 100%;
+			padding-top: 80px;
+			padding-right: 0;
+		}
+		@include break-sm {
+			padding-top: 50px;
+		}
+	}
+
+	&__title {
+		font-size: 56px;
+		text-align: left;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		@include break-sm {
+			font-size: 40px;
+			line-height: 40px;
+		}
+	}
+
+	&__text {
+		color: $color-basic-text;
+		font-weight: 500;
+		line-height: 24px;
+		max-width: 420px;
+		&:not(:last-child) {
+			margin-bottom: 31px;
+		}
+		@include break-md {
+			max-width: 100%;
+		}
+	}
+
+	&__actions {
+	}
+
+	&__decor {
+		flex: 0 0 46%;
+		@include break-md {
+			flex: 0 0 100%;
+		}
+	}
+	&__image {
+		margin-right: -120px;
+		position: relative;
+		max-width: 672px;
+		img {
+			width: 100%;
+
+			border-radius: 0 0 150px 360px;
+		}
+		&::after {
+			content: "";
+			background: url("../img/main/decor.svg") 0 0 no-repeat;
+			width: 80px;
+			height: 80px;
+			right: 36.3%;
+			position: absolute;
+			bottom: 0;
+			transform: translate(0, 50%);
+		}
+	}
+}
+.actions-main {
+	display: flex;
+	align-items: center;
+
+	gap: 40px;
+	&__link {
+		padding: 18px 48px;
+		border-radius: 40px;
+		background: $color-mark;
+		color: #fff;
+		font-weight: 600;
+		line-height: 24px;
+		transition: all 0.3s ease;
+
+		&:hover {
+			box-shadow: 4px 4px 4px #ff1818;
+			transition: all 0.3s ease;
+		}
+		&:active {
+			position: relative;
+			top: 4px;
+			left: 0;
+			box-shadow: inset -4px -4px 4px #ff1818;
+		}
+	}
+	&__icons {
+		display: flex;
+		align-items: center;
+		gap: 26px;
+		@include break-sm {
+			gap: 10px;
+		}
+	}
+	&__icon {
+	}
+	@include break-md {
+		justify-content: center;
+	}
+	@include break-sm {
+		gap: 20px;
+	}
+}
+//------------------------store--------------------------------
+
+.store {
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 84px;
+		@include break-md {
+			margin-bottom: 40px;
+		}
+		@include break-sm {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__body {
+		&:not(:last-child) {
+			margin-bottom: 102px;
+		}
+		@include break-md {
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+.body-store {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 15px;
+		margin-bottom: 32px;
+		@include break-md {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__title {
+		color: $color-title;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.5;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+		@include break-sm {
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+
+	&__all {
+		color: $color-basic-text;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 1.5;
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 54px;
+		@include break-md {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+		}
+		@include break-sm {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
+		}
+	}
+
+	&__item {
+	}
+}
+.item {
+	display: grid;
+
+	&__image {
+		text-align: center;
+		img {
+			max-width: 100%;
+		}
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+		@include break-sm {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&__title {
+		color: $color-title;
+		font-weight: 500;
+		line-height: 1.5;
+		justify-self: start;
+		position: relative;
+		&::before {
+			content: "";
+			right: 0;
+			bottom: 1px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background: #12121266;
+			transition: 0.5s;
+			transform: scaleX(0);
+		}
+		&:hover::before {
+			transform: scaleX(1);
+		}
+		&:not(:last-child) {
+			margin-bottom: 7px;
+		}
+	}
+
+	&__price {
+		color: $color-basic-text;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+}
+//------------------------categories--------------------------------
+
+.categories {
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 72px;
+		@include break-lg {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__items {
+		margin: 0 56px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 68px;
+		row-gap: 34px;
+		@include break-lg {
+			column-gap: 34px;
+			//margin: 0;
+		}
+		@include break-md {
+			grid-template-columns: repeat(2, 1fr);
+			margin: 0 20px;
+		}
+		@include break-sm {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__item {
+	}
+}
+
+.item-category {
+	position: relative;
+
+	&__title {
+		color: #fff;
+		text-align: center;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: normal;
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 3;
+		width: 100%;
+	}
+
+	&__image {
+		position: relative;
+		padding-bottom: 127%;
+		overflow: hidden;
+		border-radius: 20px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			transition: all 0.4s ease;
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+		}
+		&:hover::before {
+			opacity: 0;
+			transition: all 0.4s ease;
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			transition: all 0.4s ease;
+		}
+	}
+	&:hover &__image img {
+		transform: scale(1.1);
+	}
+}
+//------------------------brands--------------------------------
+
+.brands {
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 68px;
+		@include break-md {
+			margin-bottom: 30px;
+		}
+		@include break-sm {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__items {
+		margin: 0 15px;
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		//align-items: center;
+		column-gap: 10px;
+		row-gap: 78px;
+		@include break-lg {
+			row-gap: 40px;
+		}
+		@include break-md {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include break-sm {
+			gap: 20px;
+		}
+	}
+
+	&__item {
+		margin: auto;
+		img {
+			max-width: 100%;
+			max-height: 100px;
+			object-fit: cover;
+		}
+	}
+}
+//------------------------advantages--------------------------------
+
+.advantages {
+	background: $color-bg;
+	padding-top: 102px;
+	padding-bottom: 94px;
+	@include break-md {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	&__container {
+	}
+
+	&__title {
+		color: #fff;
+		margin-bottom: 57px;
+		@include break-md {
+			margin-bottom: 30px;
+		}
+		@include break-sm {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+
+		flex-wrap: wrap;
+
+		@include up-break-xl {
+			margin: 0 23px;
+		}
+		@include break-md {
+			justify-content: center;
+			column-gap: 10px;
+			row-gap: 40px;
+		}
+		@include break-sm {
+			row-gap: 30px;
+		}
+	}
+
+	&__item {
+		flex: 0 1 250px;
+		@mixin break-md {
+		}
+	}
+}
+
+.item-advantage {
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+	padding: 5px;
+	&__icon {
+		width: 72px;
+		height: 72px;
+		padding: 20px;
+		background: #000;
+		border-radius: 20px;
+		background: #262626;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		margin-bottom: 43px;
+		@include break-sm {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		color: #fff;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: 1.44px;
+		text-transform: uppercase;
+		margin-bottom: 14px;
+		flex: 1 1 auto;
+		text-align: center;
+	}
+
+	&__text {
+		text-align: center;
+		font-size: 14px;
+		line-height: 1.5;
+		text-transform: capitalize;
+		max-width: 230px;
+	}
+}
+
+//------------------------reviews--------------------------------
+
+.reviews {
+	padding-top: 240px;
+	padding-bottom: 240px;
+	@include break-xl {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	@include break-lg {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@include break-md {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 100px;
+		@include break-lg {
+			margin-bottom: 50px;
+		}
+		@include break-mb {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__swiper {
+	}
+}
+
+.swiper-reviews {
+	&__wrapper {
+	}
+
+	&__slide {
+	}
+
+	&__pagination {
+	}
+}
+
+.slide-swiper-reviews {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	&__image {
+	}
+
+	&__body {
+	}
+
+	&__text {
+	}
+
+	&__author {
+	}
+
+	&__name {
+	}
+
+	&__activity {
+	}
+}
